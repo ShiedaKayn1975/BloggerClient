@@ -1,0 +1,4 @@
+name: Workflow for Deploy Blog Client
+on:
+  branches:
+    - master
