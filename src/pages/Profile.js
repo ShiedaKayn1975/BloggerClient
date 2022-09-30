@@ -36,7 +36,7 @@ const Profile = ()=>{
         return ()=>{
             dispatch(clearProfile());
         }
-    },[]) // eslint-disable-line react-hooks/exhaustive-deps
+    },[])
 
     const fetchData = ({type})=>{
         switch(type){
