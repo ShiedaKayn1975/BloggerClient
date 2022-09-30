@@ -88,14 +88,14 @@ const FollowPagecontent = ({tabstate})=>{
         }
     }
 
-    const fetchData = ()=>{
-        if(tabstate===0&&isFetchingSuggestedUsers){
-            dispatch(FetchSuggestedUser({limit:20}));
-        }
-        if(tabstate===1&&isfetchingsuggestedtopic){
-            dispatch(FetchsuggestedTopic({currIndex2}));
-        }
-    }
+    // const fetchData = ()=>{
+    //     if(tabstate===0&&isFetchingSuggestedUsers){
+    //         dispatch(FetchSuggestedUser({limit:20}));
+    //     }
+    //     if(tabstate===1&&isfetchingsuggestedtopic){
+    //         dispatch(FetchsuggestedTopic({currIndex2}));
+    //     }
+    // }
     useEffect(()=>{
         if(tabstate===0&&isFetchingSuggestedUsers){
             dispatch(FetchSuggestedUser({limit:20}));

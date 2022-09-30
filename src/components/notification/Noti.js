@@ -40,7 +40,9 @@ const Noti = () => {
 
     useEffect(()=>{
         fetchNotice();
+        // eslint-disable-line react-hooks/exhaustive-deps
     },[])
+
     useEffect(()=>{
         if(pointer.current){            
             const max = Math.max(document.getElementById("notibell").offsetLeft,document.getElementById("notibell2").offsetLeft);  
