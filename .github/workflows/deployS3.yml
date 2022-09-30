@@ -16,7 +16,7 @@ jobs:
       - name: Installing dependencies
         run: npm install
       - name: Building project
-        run: npm run build
+        run: npm run build eslint-config-next
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:

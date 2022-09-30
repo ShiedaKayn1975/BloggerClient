@@ -36,7 +36,6 @@ const Homepage = ()=>{
         dispatch(FetchTrendingTopic({}));
         data?.username&&dispatch(FetchreadingList({curr5Index,uid:data.username}));
         dispatch(FetchSuggestedUser({limit:5}));
-        console.log(exploredstories,currIndex,isFetching);
     },[])       
     
     

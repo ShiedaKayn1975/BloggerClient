@@ -40,8 +40,7 @@ const Noti = () => {
 
     useEffect(()=>{
         fetchNotice();
-        // eslint-disable-line react-hooks/exhaustive-deps
-    },[])
+    },[]) // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(()=>{
         if(pointer.current){            
