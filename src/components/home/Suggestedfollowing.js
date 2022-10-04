@@ -11,7 +11,7 @@ const Suggestedfollowing = ({suggested,Useraction,SuggestedUsers}) => {
     return (
         <div className={"suggestedfollowing" +(suggested===true?" applyAditionalStyle":"")}>
             <div className="title">{suggested ? "SUGGESTED USER" : "WHO TO FOLLOW"}</div>
-            {SuggestedUsers.map(user =>
+            {SuggestedUsers?.map(user =>
                 <div className="suggested_card" key={user._id}>
                     <div className="suggested_avatar" onClick={() => history.push(user.username)}>
                         <Avatar src={user.avatar} alt="" style={{zIndex:"-1"}}/>
