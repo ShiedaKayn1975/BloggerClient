@@ -101,10 +101,10 @@ const Homepage = () => {
                 </div>
             </div>
             {
-                selected === 0 && exploredstories.map(article => <Article article={article} key={article._id} Useraction={Useraction} />)
+                selected === 0 && exploredstories?.map(article => <Article article={article} key={article._id} Useraction={Useraction} />)
             }
             {
-                selected === 1 && (data ? Followingstories.map(article => <Article article={article} key={article._id} Useraction={Useraction} />) : <Redirect to="/signin" />)
+                selected === 1 && (data ? Followingstories?.map(article => <Article article={article} key={article._id} Useraction={Useraction} />) : <Redirect to="/signin" />)
             }
         </div>
         <div className="main_right">
