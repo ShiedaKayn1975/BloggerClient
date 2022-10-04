@@ -190,7 +190,7 @@ const MyComponent = ({ isEditing }) => {
   return (
     <>
       {storystate === 0 ? <SunEditor
-        name="RockingBloggerEditor"
+        name="BloggerEditor"
         getSunEditorInstance={getSunEditorInstance}
         height="100%"
         width="100%"
