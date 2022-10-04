@@ -26,8 +26,8 @@ const FollowingStorySlice = createSlice({
   extraReducers: {
     [FetchFollowingStory.fulfilled]: (state, action) => {
       state.isFetchingfollowingstories = !action.payload.isEnded;
-      state.currindex = state.currindex + action.payload.stories.length;
-      state.Followingstories = [...state.Followingstories,...action.payload.stories];
+      state.currindex = state.currindex + (action.payload.stories?.length || 0);
+      state.Followingstories = [...state.Followingstories,...(action.payload.stories || [])];
     },
   },
 });
