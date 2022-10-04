@@ -5,7 +5,6 @@ import './Home.css';
 
 
 const Suggestedfollowing = ({ suggested, Useraction, SuggestedUsers }) => {
-
     const history = useHistory();
 
     return (
