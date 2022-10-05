@@ -287,7 +287,7 @@ const Auth = (props) => {
                                 </Tooltip>}
                         </div>
                         <div className="forget_pwd"><span onClick={() => currState(2)} style={{ margin: "auto" }}>Forgotten password?</span></div>
-                        {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>: <Button variant="outlined" onClick={loginFun}>Log in</Button>}
+                        {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>: <Button variant="outlined" onClick={loginFun}>Đăng nhập</Button>}
                     </div> : <div className="account">
                         <div>
                             <KeyboardIcon className="svgicon" />

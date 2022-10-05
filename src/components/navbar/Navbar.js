@@ -161,7 +161,7 @@ const Navbar = () => {
                         <Tooltip title="Hồ sơ 😃️" TransitionComponent={Zoom} arrow>
                             <Avatar alt="" onClick={() => history.push("/" + data.username)} />
                         </Tooltip>
-                        : <span onClick={() => history.push("/signin")}>Log in</span>}</div>
+                        : <span onClick={() => history.push("/signin")}>Đăng nhập</span>}</div>
                 </div>
             </div>
         </div>
