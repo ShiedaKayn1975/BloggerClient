@@ -91,13 +91,13 @@ const Homepage = () => {
 
     return <div className="main">
         <div className="main_component_home">
-            <div onClick={() => history.push("/follow-tag-or-people")} className="follow_people_tag"><AddCircleIcon /> Keep up with the latest update in any topic</div>
+            <div onClick={() => history.push("/follow-tag-or-people")} className="follow_people_tag"><AddCircleIcon /> Khám phá các chủ đề</div>
             <div className="main_tabs">
                 <div className={"tab" + (selected === 0 ? " selected-tab" : "")} onClick={() => fetchArticle({ type: 0 })}>
-                    Explore
+                    Khám phá
                 </div>
                 <div className={"tab" + (selected === 1 ? " selected-tab" : "")} onClick={() => fetchArticle({ type: 1 })}>
-                    Following
+                    Đang theo dõi
                 </div>
             </div>
             {

@@ -8,8 +8,8 @@ const FollowPage = () => {
         setState(switchtoTab);
     }
     return <div className="followpage">
-        <h1>Customize your interest</h1>
-        <p>Here are people, and topics you should consider following on Blogger.</p>
+        <h1>Khám phá thế giới</h1>
+        <p>Ở đây có các chủ đề và tác giả mà bạn có thể quan tâm.</p>
         <FollowTabComponent tabstate={tabstate} changeTab={changeTab} />
         <FollowPagecontent tabstate={tabstate} />
     </div>

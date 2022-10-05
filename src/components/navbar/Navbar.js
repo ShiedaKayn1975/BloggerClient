@@ -26,7 +26,7 @@ const MobileSearchModal = ({ closeModal,value,setValue,searchResult }) => {
                 <Input
                     type="text"
                     style={{ width: "100%" }}
-                    placeholder="Search 🔍️"
+                    placeholder="Tìm kiếmm 🔍️"
                     value={value}
                     onChange={(e)=>setValue(e.target.value)}
                     onKeyDown={(e)=>e.keyCode===13&&searchResult()}
@@ -111,7 +111,7 @@ const Navbar = () => {
                     <div className="search">
                         <Input
                             type="text"
-                            placeholder="Search 🔍️"
+                            placeholder="Tìm kiếm 🔍️"
                             value={value}
                             onChange={(e)=>setValue(e.target.value)}
                             onKeyDown={(e)=>e.keyCode===13&&searchResult()}
@@ -135,30 +135,30 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="header_right">
-                    <Tooltip title="Suggested ♥️" TransitionComponent={Zoom} arrow>
+                    <Tooltip title="Gợi ý cho bạn ♥️" TransitionComponent={Zoom} arrow>
                         <div className="suggestion_icon icon" onClick={()=>history.push("/follow-tag-or-people")}>
                             <GroupAddOutlinedIcon />
                         </div>
                     </Tooltip>
-                    {data&&<Tooltip title="Notifications 🔔️" TransitionComponent={Zoom} arrow>
+                    {data&&<Tooltip title="Thông báo 🔔️" TransitionComponent={Zoom} arrow>
                         <div className="notification_icon icon" id="notibell2" onClick={()=>{closeModal();isNoticeOpen(!noti)}}>
                             <NotificationsActiveOutlinedIcon />
                         </div>
                     </Tooltip>
                     }
-                    <Tooltip title="Trending 🔥️" TransitionComponent={Zoom} arrow>
+                    <Tooltip title="Xu hướng 🔥️" TransitionComponent={Zoom} arrow>
                         <div className="trending_icon icon" onClick={()=>history.push("/trending")}>
                             <WhatshotOutlinedIcon />
                         </div>
                     </Tooltip>
-                    <Tooltip title="New story ✍️" TransitionComponent={Zoom} arrow>
+                    <Tooltip title="Bài viết mới ✍️" TransitionComponent={Zoom} arrow>
                         <div className="create_new icon" onClick={()=>history.push("/newstory")}>
                             <AddCircleOutlineOutlinedIcon />
                         </div>
                     </Tooltip>                    
 
                     <div className="profile">{data ?
-                        <Tooltip title="Your profile 😃️" TransitionComponent={Zoom} arrow>
+                        <Tooltip title="Hồ sơ 😃️" TransitionComponent={Zoom} arrow>
                             <Avatar alt="" onClick={()=>history.push("/"+data.username)}/>
                         </Tooltip>
                         : <span onClick={()=>history.push("/signin")}>Log in</span>}</div>

@@ -71,8 +71,8 @@ const Trending = () => {
   }
 
   return <div className="searchpage trending">
-    <h1>Trending stories</h1>
-    <p>Here are the stories that are on lit on blogger</p>
+    <h1>Xu hướng</h1>
+    <p>Bài viết có điểm nhấn, ấn tượng, gây điên đảo trong cộng đồng =))</p>
     <div className="trendingwrapper">
       {
         Trendingstories?.map(article => <Article article={article} Useraction={Useraction} key={article._id} />)

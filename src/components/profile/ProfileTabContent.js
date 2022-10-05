@@ -28,7 +28,7 @@ const ProfileTabContent = ({ profile, tabstate, Useraction, Likedstories, readin
             </>}
             {tabstate === 2 && <div className="profile_about">
                 <div className="profile_content">
-                    <h2> About {profile.username}</h2>
+                    <h2> Giới thiệu bản thân {profile.username}</h2>
                     <div>{profile.about || "This user prefers to keep no bio"}</div>
                 </div>
                 {profile.avatar && <div className="profile_avatar">
