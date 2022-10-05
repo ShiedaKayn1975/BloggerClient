@@ -1,5 +1,5 @@
 import React from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Navbar.css";
 import Input from "@material-ui/core/Input";
 import RockingBloggerLogo from "../../assets/RockingBloggerlogo.png";
@@ -19,7 +19,7 @@ import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
 import Noti from "../notification/Noti";
 import { useSelector } from "react-redux";
 
-const MobileSearchModal = ({ closeModal,value,setValue,searchResult }) => {
+const MobileSearchModal = ({ closeModal, value, setValue, searchResult }) => {
     return (
         <div className="searchmodal mobile_pf">
             <div className="input-wrapper">
@@ -28,38 +28,38 @@ const MobileSearchModal = ({ closeModal,value,setValue,searchResult }) => {
                     style={{ width: "100%" }}
                     placeholder="Tìm kiếmm 🔍️"
                     value={value}
-                    onChange={(e)=>setValue(e.target.value)}
-                    onKeyDown={(e)=>e.keyCode===13&&searchResult()}
+                    onChange={(e) => setValue(e.target.value)}
+                    onKeyDown={(e) => e.keyCode === 13 && searchResult()}
                     autoFocus={true}
-                    onBlur={()=>setTimeout(()=>closeModal(),500)}//To make search_button work,so delay closeModal event for 500ms
+                    onBlur={() => setTimeout(() => closeModal(), 500)}//To make search_button work,so delay closeModal event for 500ms
                 />
                 <div className="search_icon_mobile" onClick={searchResult}>
-                    <SearchOutlinedIcon/>
+                    <SearchOutlinedIcon />
                 </div>
             </div>
         </div>
     )
 }
 
-const MobileMenu = ({ data,history,closeModal }) => {
+const MobileMenu = ({ data, history, closeModal }) => {
     return (
         <div className="mobilemenu mobile_pf" onClick={closeModal}>
-            <div className="menu_item" onClick={()=>history.push("/")}>
+            <div className="menu_item" onClick={() => history.push("/")}>
                 <HomeOutlinedIcon />&nbsp;&nbsp;Home
             </div>
-            <div className="menu_item" onClick={()=>history.push("/follow-tag-or-people")}>
+            <div className="menu_item" onClick={() => history.push("/follow-tag-or-people")}>
                 <GroupAddOutlinedIcon />&nbsp;&nbsp;Suggestions
             </div>
-            <div className="menu_item" onClick={()=>history.push("/trending")}>
+            <div className="menu_item" onClick={() => history.push("/trending")}>
                 <WhatshotOutlinedIcon />&nbsp;&nbsp;Trending
             </div>
-           
+
             {!data &&
-                <div className="menu_item" onClick={()=>history.push("/signin")}>
+                <div className="menu_item" onClick={() => history.push("/signin")}>
                     <VpnKeyOutlinedIcon />&nbsp;&nbsp;Log in
                 </div>}
-            {data && 
-                <div className="menu_item" onClick={()=>history.push("/me")}>
+            {data &&
+                <div className="menu_item" onClick={() => history.push("/me")}>
                     <PermIdentityOutlinedIcon />&nbsp;&nbsp;Profile
                 </div>}
         </div>
@@ -67,40 +67,40 @@ const MobileMenu = ({ data,history,closeModal }) => {
 }
 
 const Navbar = () => {
-    const {data} = useSelector((state)=>state.user);
-    
+    const { data } = useSelector((state) => state.user);
+
     const history = useHistory();
-    const [value,setVal] = React.useState("");    
+    const [value, setVal] = React.useState("");
     const [openMenu, isMenuOpen] = React.useState(false);
     const [search, isSearchOpen] = React.useState(false);
-    const [noti,isNoticeOpen] = React.useState(false);
+    const [noti, isNoticeOpen] = React.useState(false);
 
     // useEffect(()=>{
     //     localStorage.setItem("user",true);
     // },[])
 
-    const setValue = (value)=>{
+    const setValue = (value) => {
         setVal(value);
     }
 
-    const searchResult = ()=>{
+    const searchResult = () => {
         closeModal();
-        history.push('/search/'+value);
+        history.push('/search/' + value);
         setVal("");
-        
+
     }
 
     const closeModal = () => {
-        
+
         isSearchOpen(false);
         isMenuOpen(false);
         isNoticeOpen(false);
     }
     return (
         <div className="header">
-            {openMenu && <MobileMenu data={data} history={history} closeModal={closeModal}/>}
-            {search && <MobileSearchModal closeModal={closeModal} searchResult={searchResult} value={value} setValue={setValue}/>}
-            {noti&&<Noti/>}
+            {openMenu && <MobileMenu data={data} history={history} closeModal={closeModal} />}
+            {search && <MobileSearchModal closeModal={closeModal} searchResult={searchResult} value={value} setValue={setValue} />}
+            {noti && <Noti />}
             <div className="mainheader_wrapper">
                 <div className="header_left">
                     <a href="/">
@@ -113,55 +113,55 @@ const Navbar = () => {
                             type="text"
                             placeholder="Tìm kiếm 🔍️"
                             value={value}
-                            onChange={(e)=>setValue(e.target.value)}
-                            onKeyDown={(e)=>e.keyCode===13&&searchResult()}
-                            
+                            onChange={(e) => setValue(e.target.value)}
+                            onKeyDown={(e) => e.keyCode === 13 && searchResult()}
+
                         />
                     </div>
                 </div>
                 <div className="mobile_header">
-                    <div className="search_mobile" onClick={() => {closeModal();isSearchOpen(!search)}}>
+                    <div className="search_mobile" onClick={() => { closeModal(); isSearchOpen(!search) }}>
                         <SearchOutlinedIcon />
                     </div>
-                    {data&&<div className="search_mobile" id="notibell" onClick={() => {closeModal();isNoticeOpen(!noti)}}>
+                    {data && <div className="search_mobile" id="notibell" onClick={() => { closeModal(); isNoticeOpen(!noti) }}>
                         <NotificationsActiveOutlinedIcon />
                     </div>
                     }
-                    <div className="create_new" onClick={()=>history.push("/newstory")}>
+                    <div className="create_new" onClick={() => history.push("/newstory")}>
                         <AddCircleOutlineOutlinedIcon />
                     </div>
-                    <div className="menu" onClick={() => {closeModal(); isMenuOpen(!openMenu) }}>
+                    <div className="menu" onClick={() => { closeModal(); isMenuOpen(!openMenu) }}>
                         {openMenu ? <ClearOutlinedIcon /> : <MenuOutlinedIcon />}
                     </div>
                 </div>
                 <div className="header_right">
                     <Tooltip title="Gợi ý cho bạn ♥️" TransitionComponent={Zoom} arrow>
-                        <div className="suggestion_icon icon" onClick={()=>history.push("/follow-tag-or-people")}>
+                        <div className="suggestion_icon icon" onClick={() => history.push("/follow-tag-or-people")}>
                             <GroupAddOutlinedIcon />
                         </div>
                     </Tooltip>
-                    {data&&<Tooltip title="Thông báo 🔔️" TransitionComponent={Zoom} arrow>
-                        <div className="notification_icon icon" id="notibell2" onClick={()=>{closeModal();isNoticeOpen(!noti)}}>
+                    {data && <Tooltip title="Thông báo 🔔️" TransitionComponent={Zoom} arrow>
+                        <div className="notification_icon icon" id="notibell2" onClick={() => { closeModal(); isNoticeOpen(!noti) }}>
                             <NotificationsActiveOutlinedIcon />
                         </div>
                     </Tooltip>
                     }
                     <Tooltip title="Xu hướng 🔥️" TransitionComponent={Zoom} arrow>
-                        <div className="trending_icon icon" onClick={()=>history.push("/trending")}>
+                        <div className="trending_icon icon" onClick={() => history.push("/trending")}>
                             <WhatshotOutlinedIcon />
                         </div>
                     </Tooltip>
                     <Tooltip title="Bài viết mới ✍️" TransitionComponent={Zoom} arrow>
-                        <div className="create_new icon" onClick={()=>history.push("/newstory")}>
+                        <div className="create_new icon" onClick={() => history.push("/newstory")}>
                             <AddCircleOutlineOutlinedIcon />
                         </div>
-                    </Tooltip>                    
+                    </Tooltip>
 
                     <div className="profile">{data ?
                         <Tooltip title="Hồ sơ 😃️" TransitionComponent={Zoom} arrow>
-                            <Avatar alt="" onClick={()=>history.push("/"+data.username)}/>
+                            <Avatar alt="" onClick={() => history.push("/" + data.username)} />
                         </Tooltip>
-                        : <span onClick={()=>history.push("/signin")}>Log in</span>}</div>
+                        : <span onClick={() => history.push("/signin")}>Log in</span>}</div>
                 </div>
             </div>
         </div>
