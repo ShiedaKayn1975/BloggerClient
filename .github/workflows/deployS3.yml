@@ -35,4 +35,4 @@ jobs:
           USERNAME : ${{ secrets.USERNAME  }}
         run: |
           echo "$SSH_KEY" > ssh_key && chmod 600 ssh_key
-          rsync -av -e ssh_key ./build/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:/projects/blogger_client
+          rsync -av -e ./ssh_key ./build/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:/projects/blogger_client
