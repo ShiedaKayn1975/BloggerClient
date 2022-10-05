@@ -32,10 +32,10 @@ jobs:
       #   run: echo "$SSH_KEY" > ssh_key.cer && chmod 600 ssh_key.cer
       - name: Deploy to EC2 instance
         uses: appleboy/scp-action@master
-          with:
-            host: ${{ secrets.HOSTNAME }}
-            username: ${{ secrets.USERNAME }}
-            port: 22
-            key: ${{ secrets.SSH_KEY }}
-            source: "./build"
-            target: "/home/ubuntu/projects/blogger_client"
+        with:
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USERNAME }}
+          port: 22
+          key: ${{ secrets.SSH_KEY }}
+          source: "./build"
+          target: "/home/ubuntu/projects/blogger_client"
