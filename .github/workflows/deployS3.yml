@@ -34,5 +34,5 @@ jobs:
           HOSTNAME : ${{ secrets.HOSTNAME  }}
           USERNAME : ${{ secrets.USERNAME  }}
         run: |
-          echo "$SSH_KEY" > ssh_key && chmod 600 ssh_key
-          scp -i ssh_key ./build/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:/home/ubuntu/projects/blogger_client
+          echo "$SSH_KEY" > ssh_key.cer && chmod 600 ssh_key.cer
+          scp -i ssh_key.cer ./build/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:/home/ubuntu/projects/blogger_client
