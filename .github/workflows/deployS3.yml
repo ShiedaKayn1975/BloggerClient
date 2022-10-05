@@ -1,6 +1,6 @@
 name: Workflow for Deploy Blog Client
 on:
-  push:
+  pull:
     branches:
       - master
 jobs: 
