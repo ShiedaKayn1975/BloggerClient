@@ -26,7 +26,7 @@ const MobileSearchModal = ({ closeModal, value, setValue, searchResult }) => {
                 <Input
                     type="text"
                     style={{ width: "100%" }}
-                    placeholder="Tìm kiếmm 🔍️"
+                    placeholder="Tìm kiếm 🔍️"
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     onKeyDown={(e) => e.keyCode === 13 && searchResult()}
