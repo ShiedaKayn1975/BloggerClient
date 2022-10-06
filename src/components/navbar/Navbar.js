@@ -45,22 +45,22 @@ const MobileMenu = ({ data, history, closeModal }) => {
     return (
         <div className="mobilemenu mobile_pf" onClick={closeModal}>
             <div className="menu_item" onClick={() => history.push("/")}>
-                <HomeOutlinedIcon />&nbsp;&nbsp;Home
+                <HomeOutlinedIcon />&nbsp;&nbsp;Trang chủ
             </div>
             <div className="menu_item" onClick={() => history.push("/follow-tag-or-people")}>
-                <GroupAddOutlinedIcon />&nbsp;&nbsp;Suggestions
+                <GroupAddOutlinedIcon />&nbsp;&nbsp;Gợi ý cho bạn
             </div>
             <div className="menu_item" onClick={() => history.push("/trending")}>
-                <WhatshotOutlinedIcon />&nbsp;&nbsp;Trending
+                <WhatshotOutlinedIcon />&nbsp;&nbsp;Xu hướng
             </div>
 
             {!data &&
                 <div className="menu_item" onClick={() => history.push("/signin")}>
-                    <VpnKeyOutlinedIcon />&nbsp;&nbsp;Log in
+                    <VpnKeyOutlinedIcon />&nbsp;&nbsp;Đăng nhập
                 </div>}
             {data &&
                 <div className="menu_item" onClick={() => history.push("/me")}>
-                    <PermIdentityOutlinedIcon />&nbsp;&nbsp;Profile
+                    <PermIdentityOutlinedIcon />&nbsp;&nbsp;Hồ sơ
                 </div>}
         </div>
     )
