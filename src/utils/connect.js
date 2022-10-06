@@ -71,7 +71,7 @@ export const FormateDate = (date,short) => {
 }
 export const FetchData = async (endpoint, { body, ...customConfig } = {}) => {
     const token = localStorage.getItem("accesstoken");
-    const headers = { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" };
+    const headers = { "Content-Type": "application/json" };
 
 
     if (token) {
