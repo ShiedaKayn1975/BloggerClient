@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { ToastProvider } from 'react-toast-notifications';
 import App from './App';
-import {Provider} from "react-redux";
+import { Provider } from "react-redux";
 import store from "./store"
 import reportWebVitals from './reportWebVitals';
 
@@ -11,7 +11,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ToastProvider
       autoDismiss={true}
-      autoDismissTimeout={4000}      
+      autoDismissTimeout={4000}
       placement="top-right"
     >
       <App />

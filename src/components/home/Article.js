@@ -18,7 +18,6 @@ const Article = ({ article, short, noOption, Useraction }) => {
     const { addToast } = useToasts();
     const dispatch = useDispatch();
 
-
     const delstoryFunc = () => {
         if (!data) {
             history.push("/signin");
@@ -62,7 +61,7 @@ const Article = ({ article, short, noOption, Useraction }) => {
                     </div>
                     {!noOption && <div className="article_right_info">
                         <div className="article_bkm_icon" onClick={() => Useraction({ type: "togglesavestory", payload: article._id })}>{article.isSaved ? <BookmarkIcon /> : <BookmarkBorderIcon />}</div>
-                        <div className="article_more_icon" onClick={()=>setModal(true)}><MoreVertIcon /></div>
+                        <div className="article_more_icon" onClick={() => setModal(true)}><MoreVertIcon /></div>
                     </div>
                     }
 

@@ -22,14 +22,14 @@ import { useToasts } from "react-toast-notifications";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-export const LoadingButton = ()=>{
-    return <ActivityIndicator size={20} color="secondary"/>
+export const LoadingButton = () => {
+    return <ActivityIndicator size={20} color="secondary" />
 }
 
 const Auth = (props) => {
     const [state, currState] = useState(props.state || 0);
     const { addToast } = useToasts();
-    const [isloading,setLoading] = useState(false);
+    const [isloading, setLoading] = useState(false);
     const history = useHistory();
     const dispatch = useDispatch();
     const [forgetState, setForgetState] = useState(0);
@@ -68,7 +68,7 @@ const Auth = (props) => {
                 else if (res === "done") {
                     history.goBack();
                 }
-                else{
+                else {
                     NotifyUser({ content: data, type: "error", addToast });
                 }
             }
@@ -104,12 +104,12 @@ const Auth = (props) => {
         }
         setLoading(true);
         dispatch(signup({
-            payload, callback: function (res,msg) {
+            payload, callback: function (res, msg) {
                 setLoading(false);
                 if (res) {
                     history.goBack();
                 }
-                else{                    
+                else {
                     NotifyUser({ content: msg, type: "error", addToast })
                 }
             }
@@ -127,12 +127,12 @@ const Auth = (props) => {
         }
         setLoading(true);
         dispatch(twofactorOTPVerify({
-            payload, callback: function (res,msg) {
+            payload, callback: function (res, msg) {
                 setLoading(false);
                 if (res) {
                     history.goBack();
                 }
-                else{                    
+                else {
                     NotifyUser({ content: msg, type: "error", addToast })
                 }
             }
@@ -154,13 +154,13 @@ const Auth = (props) => {
         }
         setLoading(true);
         dispatch(ReqForgottenPwdOTP({
-            payload, callback: function (res,msg) {
+            payload, callback: function (res, msg) {
                 setLoading(false);
                 if (res) {
                     setForgetState(1);
                     NotifyUser({ content: "Enter the OTP sent to your email", type: "success", addToast })
                 }
-                else{                    
+                else {
                     NotifyUser({ content: msg, type: "error", addToast })
                 }
             }
@@ -179,12 +179,12 @@ const Auth = (props) => {
         }
         setLoading(true);
         dispatch(resetPassword({
-            payload, callback: function (res,msg) {
+            payload, callback: function (res, msg) {
                 setLoading(false);
                 if (res) {
                     history.goBack();
                 }
-                else{                    
+                else {
                     NotifyUser({ content: msg, type: "error", addToast })
                 }
             }
@@ -287,14 +287,14 @@ const Auth = (props) => {
                                 </Tooltip>}
                         </div>
                         <div className="forget_pwd"><span onClick={() => currState(2)} style={{ margin: "auto" }}>Forgotten password?</span></div>
-                        {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>: <Button variant="outlined" onClick={loginFun}>Đăng nhập</Button>}
+                        {isloading ? <Button variant="outlined" style={{ background: "white" }}><LoadingButton /></Button> : <Button variant="outlined" onClick={loginFun}>Đăng nhập</Button>}
                     </div> : <div className="account">
                         <div>
                             <KeyboardIcon className="svgicon" />
                             <TextField label="Email OTP" name="login_otp" value={data.login_otp} onChange={InputEv} />
                         </div>
-                        {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>:<Button style={{ background: "rgb(217, 57, 88)" }} variant="outlined" onClick={loginFun}>Resend OTP</Button>}
-                        {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>:<Button variant="outlined" onClick={twoFactorOtpVerifyFun}>Submit</Button>}
+                        {isloading ? <Button variant="outlined" style={{ background: "white" }}><LoadingButton /></Button> : <Button style={{ background: "rgb(217, 57, 88)" }} variant="outlined" onClick={loginFun}>Resend OTP</Button>}
+                        {isloading ? <Button variant="outlined" style={{ background: "white" }}><LoadingButton /></Button> : <Button variant="outlined" onClick={twoFactorOtpVerifyFun}>Submit</Button>}
                     </div>)
                 }
                 {
@@ -324,7 +324,7 @@ const Auth = (props) => {
                                 </Tooltip>
                             }
                         </div>
-                        {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>:<Button variant="outlined" onClick={signupFun}>Sign up</Button>}
+                        {isloading ? <Button variant="outlined" style={{ background: "white" }}><LoadingButton /></Button> : <Button variant="outlined" onClick={signupFun}>Sign up</Button>}
                     </div>
                 }
                 {
@@ -334,7 +334,7 @@ const Auth = (props) => {
                                 <EmailIcon className="svgicon" />
                                 <TextField label="Email" name="forget_email" value={data.forget_email} onChange={InputEv} />
                             </div>
-                            {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>:<Button variant="outlined" onClick={requestOTPfun}>Recover</Button>}</>}
+                            {isloading ? <Button variant="outlined" style={{ background: "white" }}><LoadingButton /></Button> : <Button variant="outlined" onClick={requestOTPfun}>Recover</Button>}</>}
                         {
                             forgetState === 1 && <>
                                 <div>
@@ -353,8 +353,8 @@ const Auth = (props) => {
                                     <KeyboardIcon className="svgicon" />
                                     <TextField label="Email OTP" name="forget_OTP" value={data.forget_OTP} onChange={InputEv} />
                                 </div>
-                                {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>:<Button style={{ background: "rgb(217, 57, 88)" }} variant="outlined" onClick={requestOTPfun}>Resend OTP</Button>}
-                                {isloading?<Button variant="outlined" style={{background:"white"}}><LoadingButton/></Button>:<Button variant="outlined" onClick={resetPasswordFun}>Submit</Button>}
+                                {isloading ? <Button variant="outlined" style={{ background: "white" }}><LoadingButton /></Button> : <Button style={{ background: "rgb(217, 57, 88)" }} variant="outlined" onClick={requestOTPfun}>Resend OTP</Button>}
+                                {isloading ? <Button variant="outlined" style={{ background: "white" }}><LoadingButton /></Button> : <Button variant="outlined" onClick={resetPasswordFun}>Submit</Button>}
                             </>
                         }
                     </div>
