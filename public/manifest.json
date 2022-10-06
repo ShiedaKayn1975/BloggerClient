@@ -1,20 +1,20 @@
 {
   "short_name": "🔥️ Blogger 🔥️",
-  "name": "Let's create rocking blog",
+  "name": "Let's create blog",
   "icons": [
     {
-      "src": "icon-64.jpg",
+      "src": "beelogo.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/jpg"
+      "type": "image/png"
     },
     {
-      "src": "icon-192.jpg",
-      "type": "image/jpg",
+      "src": "beelogo.png",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "icon-512.jpg",
-      "type": "image/jpg",
+      "src": "beelogo.png",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ],

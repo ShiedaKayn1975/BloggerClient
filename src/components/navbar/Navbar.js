@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Navbar.css";
 import Input from "@material-ui/core/Input";
-import RockingBloggerLogo from "../../assets/RockingBloggerlogo.png";
+import RockingBloggerLogo from "../../assets/logo.svg";
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import NotificationsActiveOutlinedIcon from '@material-ui/icons/NotificationsActiveOutlined';
 import WhatshotOutlinedIcon from '@material-ui/icons/WhatshotOutlined';
