@@ -37,8 +37,7 @@ const Homepage = () => {
 
 
     const fetchArticle = ({ type }) => {
-        // NotifyUser({type:"success",content:"Welcome to the rockingblogger",addToast})
-        //console.log(Followingstories);
+        NotifyUser({ type: "success", content: "Welcome to the Beemo Code", addToast })
         switch (type) {
             case 0:
                 isFetching && dispatch(FetchExplored({ currIndex }));

@@ -15,8 +15,6 @@ import { FetchSearchedstory } from "../reducers/SearchStory";
 import { FetchSearchedUser } from "../reducers/getSearchPeople";
 
 //Search for people and topic matching on blogger
-
-
 const Searchpage = ()=>{
     const [tabstate,setState] = React.useState(0);
     const {data} = useSelector((state)=>state.user);

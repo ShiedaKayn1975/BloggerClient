@@ -11,8 +11,6 @@ import { useToasts } from "react-toast-notifications";
 import { useHistory } from "react-router-dom";
 
 //Search for trending stories on blogger
-
-
 const Trending = () => {
 
   const dispatch = useDispatch();
