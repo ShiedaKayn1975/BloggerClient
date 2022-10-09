@@ -324,7 +324,7 @@ button[data-command="template"],button[data-command="preview"],button[data-comma
 
 /*Blog page */
 .blogpage{
-    max-width:800px;
+    max-width:600px;
     margin:auto;
     padding:20px;
     overflow-x: hidden;
